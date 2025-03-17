@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Architectural Scale Converter
+
+A Next.js application designed for architecture students to work with scales and unit conversions. This tool helps students better understand and utilize scale in their architectural projects.
+
+## Features
+
+- **Scale Converter**: Convert between real-world measurements and scaled measurements for architectural drawings and models
+- **Unit Converter**: Convert between different metric and imperial units commonly used in architecture
+- **Educational Content**: Information about scales in architecture and tips for students
+- **Responsive Design**: Works on both desktop and mobile devices
+
+## Purpose
+
+This application serves as an educational tool for architecture students who need to:
+
+- Convert measurements for scale drawings (1:20, 1:50, 1:100, etc.)
+- Convert between metric and imperial measurements
+- Better understand the concept of scale in architectural design
+- Perform accurate area calculations for architectural plans
 
 ## Getting Started
 
@@ -14,11 +32,42 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application provides two main tools:
+
+1. **Scale Converter**:
+   - Set the scale ratio (e.g., 1:100)
+   - Enter a real-world measurement
+   - Get the equivalent scaled measurement for your drawing or model
+   - Works in both directions (real-to-scale and scale-to-real)
+
+2. **Unit Converter**:
+   - Convert between different metric units (mm, cm, m, km)
+   - Convert between metric and imperial units
+   - Supports both length and area conversions
+   - Includes common architectural conversion factors
+
+## Technologies Used
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+
+## Educational Value
+
+This tool helps architecture students:
+- Understand the mathematical relationship between real and scaled measurements
+- Practice conversions between different units of measurement
+- Learn standard architectural scales and their applications
+- Improve accuracy in creating architectural drawings and models
+
+## License
+
+This project is open source and available for educational purposes.
 
 ## Learn More
 
