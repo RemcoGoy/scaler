@@ -70,8 +70,15 @@ const ScaleConverter = () => {
     // Convert real value to meters
     const realValueInMeters = realValue * unitToMetersFactor[realUnit];
 
+    let currentScaleRatio;
+    if (scaleRatio === 0) {
+      currentScaleRatio = customRatioFactor2 / customRatioFactor1;
+    } else {
+      currentScaleRatio = scaleRatio;
+    }
+
     // Convert to scaled value in meters
-    const scaledValueInMeters = realValueInMeters / scaleRatio;
+    const scaledValueInMeters = realValueInMeters / currentScaleRatio;
 
     // Convert from meters to target unit
     const result = scaledValueInMeters / unitToMetersFactor[scaledUnit];
@@ -86,8 +93,15 @@ const ScaleConverter = () => {
     // Convert scaled value to meters
     const scaledValueInMeters = scaledValue * unitToMetersFactor[scaledUnit];
 
+    let currentScaleRatio;
+    if (scaleRatio === 0) {
+      currentScaleRatio = customRatioFactor2 / customRatioFactor1;
+    } else {
+      currentScaleRatio = scaleRatio;
+    }
+
     // Convert to real value in meters
-    const realValueInMeters = scaledValueInMeters * scaleRatio;
+    const realValueInMeters = scaledValueInMeters * currentScaleRatio;
 
     // Convert from meters to target unit
     const result = realValueInMeters / unitToMetersFactor[realUnit];
@@ -108,6 +122,8 @@ const ScaleConverter = () => {
     realUnit,
     scaledUnit,
     scaledValue,
+    customRatioFactor1,
+    customRatioFactor2,
     convertDirection,
   ]);
 
