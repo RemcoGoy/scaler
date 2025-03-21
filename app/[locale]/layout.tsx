@@ -6,11 +6,14 @@ const locales = ["en", "nl"];
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  // Extract locale from params
+  const { locale } = await params;
+
   // Validate that the locale is supported
   if (!locales.includes(locale)) {
     notFound();
