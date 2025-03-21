@@ -38,6 +38,21 @@
     },
     "info": {
         "title": "Understanding Scale in Architecture",
-        "subtitle": "The essential concept that connects real-world structures to their representations"
+        "subtitle": "The essential concept that connects real-world structures to their representations",
+        "scaleInfo": "Scale is a crucial concept in architecture that allows designers to represent large structures on paper or in small models. It defines the relationship between the dimensions on a drawing or model and the actual size of the built structure.",
+        "whyScale": "Why Scale Matters",
+        "workingWithScale": "Working with Scale",
+        "tipsForArchitectureStudents": "Tips for Architecture Students",
+        "whyScaleInfo1": "Enables representation of buildings at a manageable size",
+        "whyScaleInfo2": "Ensures proportional accuracy across all elements",
+        "whyScaleInfo3": "Facilitates communication between architects, engineers, and clients",
+        "whyScaleInfo4": "Allows for precise measurements and dimensions",
+        "workingWithScaleInfo": "When working with scale, you need to consistently convert between real-world measurements and their scaled representations. A scale of 1: 50 means 1 unit on your drawing (e.g., 1 cm) represents 50 units in reality (50 cm).",
+        "tips1": "Always note the scale on your drawings",
+        "tips2": "Choose an appropriate scale for the level of detail needed",
+        "tips3": "Use a scale ruler for accurate measurements on physical drawings",
+        "tips4": "Consider using standardized scales (1:20, 1:50, 1:100, 1:200, etc.)",
+        "tips5": "Practice converting between real measurements and scaled dimensions",
+        "tips6": "Be consistent with your chosen units (metric or imperial) throughout a project"
     }
 }

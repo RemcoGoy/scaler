@@ -37,6 +37,21 @@
     },
     "info": {
         "title": "Schaal begrijpen in Architectuur",
-        "subtitle": "Het essentiële concept dat echte structuren verbindt met hun representaties"
+        "subtitle": "Het essentiële concept dat echte structuren verbindt met hun representaties",
+        "scaleInfo": "Schaal is een belangrijk concept in architectuur dat ontwerpers toelaat grote structuren op papier of in kleine modellen te representeren. Het definieert de relatie tussen de afmetingen op een tekening of model en de werkelijke grootte van de gebouwde structuur.",
+        "whyScale": "Waarom Schaal Belangrijk Is",
+        "workingWithScale": "Werken met Schaal",
+        "tipsForArchitectureStudents": "Tips voor Architectuur Studenten",
+        "whyScaleInfo1": "Maakt het mogelijk om grote gebouwen op een beheerbare schaal te representeren",
+        "whyScaleInfo2": "Zorgt voor evenredige nauwkeurigheid over alle elementen",
+        "whyScaleInfo3": "Maakt het mogelijk om communicatie tussen architecten, ingenieurs en klanten te faciliteren",
+        "whyScaleInfo4": "Maakt het mogelijk om nauwkeurige metingen en afmetingen te maken",
+        "workingWithScaleInfo": "Wanneer je met schaal werkt, moet je consistent tussen echte wereldmetingen en hun geschaalde representaties omzetten. Een schaal van 1:50 betekent dat 1 eenheid op je tekening (bijvoorbeeld 1 cm) gelijk is aan 50 eenheden in de echte wereld (50 cm).",
+        "tips1": "Noteer altijd de schaal op je tekeningen",
+        "tips2": "Kies een geschikte schaal voor het niveau van detail dat je nodig hebt",
+        "tips3": "Gebruik een schaalmaat voor nauwkeurige metingen op fysieke tekeningen",
+        "tips4": "Overweeg het gebruik van standaard schaalverhoudingen (1:20, 1:50, 1:100, 1:200, etc.)",
+        "tips5": "Oefen het omzetten tussen echte metingen en geschaalde afmetingen",
+        "tips6": "Zorg voor consistentie in de gekozen eenheden (metrisch of imperial) gedurende een project"
     }
 }

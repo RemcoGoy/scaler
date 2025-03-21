@@ -56,63 +56,40 @@ export default function Home() {
             <CardDescription>{t("info.subtitle")}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <p className="text-muted-foreground">
-              Scale is a crucial concept in architecture that allows designers
-              to represent large structures on paper or in small models. It
-              defines the relationship between the dimensions on a drawing or
-              model and the actual size of the built structure.
-            </p>
+            <p className="text-muted-foreground">{t("info.scaleInfo")}</p>
 
             <div>
-              <h3 className="text-xl font-semibold mb-2">Why Scale Matters</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                {t("info.whyScale")}
+              </h3>
               <ul className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground">
-                <li>
-                  Enables representation of buildings at a manageable size
-                </li>
-                <li>Ensures proportional accuracy across all elements</li>
-                <li>
-                  Facilitates communication between architects, engineers, and
-                  clients
-                </li>
-                <li>Allows for precise measurements and dimensions</li>
+                <li>{t("info.whyScaleInfo1")}</li>
+                <li>{t("info.whyScaleInfo2")}</li>
+                <li>{t("info.whyScaleInfo3")}</li>
+                <li>{t("info.whyScaleInfo4")}</li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-2">Working with Scale</h3>
+              <h3 className="text-xl font-semibold mb-2">
+                {t("info.workingWithScale")}
+              </h3>
               <p className="mb-4 text-muted-foreground">
-                When working with scale, you need to consistently convert
-                between real-world measurements and their scaled
-                representations. A scale of 1:50 means 1 unit on your drawing
-                (e.g., 1 cm) represents 50 units in reality (50 cm).
+                {t("info.workingWithScaleInfo")}
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold mb-2">
-                Tips for Architecture Students
+                {t("info.tipsForArchitectureStudents")}
               </h3>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Always note the scale on your drawings</li>
-                <li>
-                  Choose an appropriate scale for the level of detail needed
-                </li>
-                <li>
-                  Use a scale ruler for accurate measurements on physical
-                  drawings
-                </li>
-                <li>
-                  Consider using standardized scales (1:20, 1:50, 1:100, 1:200,
-                  etc.)
-                </li>
-                <li>
-                  Practice converting between real measurements and scaled
-                  dimensions
-                </li>
-                <li>
-                  Be consistent with your chosen units (metric or imperial)
-                  throughout a project
-                </li>
+                <li>{t("info.tips1")}</li>
+                <li>{t("info.tips2")}</li>
+                <li>{t("info.tips3")}</li>
+                <li>{t("info.tips4")}</li>
+                <li>{t("info.tips5")}</li>
+                <li>{t("info.tips6")}</li>
               </ul>
             </div>
           </CardContent>
