@@ -9,6 +9,18 @@
         "scale": "Schaal",
         "units": "Eenheden"
     },
+    "scale": {
+        "title": "Schaal Conversie",
+        "subtitle": "Converteer tussen echte wereld en geschaalde metingen voor architectuurtekeningen",
+        "scaleSelectTitle": "Veel voorkomende schaalverhoudingen",
+        "ratio": "Schaalverhouding (1:X)",
+        "ratioDescription": "Een schaal van 1:{scaleRatio} betekent dat 1 eenheid op je tekening gelijk is aan {scaleRatio} eenheden in de echte wereld.",
+        "realWorldMeasurement": "Echte wereld meting",
+        "scaledMeasurement": "Geschaalde meting",
+        "understandingResult": "Begrijpen van het resultaat",
+        "understandingResultRealToScale": "{realValue} {realUnit} in de echte wereld is gelijk aan {scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening.",
+        "understandingResultScaleToReal": "{scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening is gelijk aan {realValue} {realUnit} in de echte wereld."
+    },
     "common": {
         "english": "Engels",
         "dutch": "Nederlands"

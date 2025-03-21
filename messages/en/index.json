@@ -9,6 +9,19 @@
         "scale": "Scale",
         "units": "Units"
     },
+    "scale": {
+        "title": "Scale Conversion",
+        "subtitle": "Convert between real-world and scaled measurements for architectural drawings",
+        "scaleSelectTitle": "Common Architectural Scales",
+        "ratio": "Scale Ratio (1:X)",
+        "ratioDescription": "A scale of 1:{scaleRatio} means 1 unit on your drawing equals {scaleRatio} units in real life.",
+        "realWorldMeasurement": "Real World Measurement",
+        "scaledMeasurement": "Scaled Measurement",
+        "understandingResult": "Understanding the Result",
+        "understandingResultRealToScale": "{realValue} {realUnit} in real life equals {scaledValue} {scaledUnit} on your 1:{scaleRatio} model or drawing.",
+        "understandingResultScaleToReal": "{scaledValue} {scaledUnit} on your 1:{scaleRatio} model or drawing equals {realValue} {realUnit} in real life.",
+        "recommendedScales": "Recommended Scales"
+    },
     "common": {
         "english": "English",
         "dutch": "Dutch"

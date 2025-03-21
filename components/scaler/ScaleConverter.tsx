@@ -18,10 +18,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import { useTranslations } from "next-intl";
 
 type Unit = "mm" | "cm" | "m" | "km";
 
 const ScaleConverter = () => {
+  const t = useTranslations("scale");
+
   // State for inputs
   const [realValue, setRealValue] = useState<number>(1);
   const [scaledValue, setScaledValue] = useState<number | null>(null);
@@ -34,8 +37,8 @@ const ScaleConverter = () => {
 
   // Common scales in architecture
   const commonScales = [
-    { label: "1:1 (Full Size)", value: 1 },
-    { label: "1:2 (Half Size)", value: 2 },
+    { label: "1:1", value: 1 },
+    { label: "1:2", value: 2 },
     { label: "1:5", value: 5 },
     { label: "1:10", value: 10 },
     { label: "1:20", value: 20 },
@@ -128,18 +131,15 @@ const ScaleConverter = () => {
   return (
     <Card className="shadow-lg border-t-4 border-t-blue-500">
       <CardHeader>
-        <CardTitle className="text-2xl text-center">
-          Architectural Scale Converter
-        </CardTitle>
+        <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
         <CardDescription className="text-center">
-          Convert between real-world and scaled measurements for architectural
-          drawings
+          {t("subtitle")}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Scale ratio selector */}
         <div className="space-y-2">
-          <label className="text-sm font-medium">Scale Ratio (1:X)</label>
+          <label className="text-sm font-medium">{t("ratio")}</label>
           <Select
             value={scaleRatio.toString()}
             onValueChange={handleScaleRatioChange}
@@ -149,7 +149,7 @@ const ScaleConverter = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel>Common Architectural Scales</SelectLabel>
+                <SelectLabel>{t("scaleSelectTitle")}</SelectLabel>
                 {commonScales.map((scale) => (
                   <SelectItem key={scale.value} value={scale.value.toString()}>
                     {scale.label}
@@ -159,8 +159,7 @@ const ScaleConverter = () => {
             </SelectContent>
           </Select>
           <p className="text-sm text-muted-foreground mt-1">
-            A scale of 1:{scaleRatio} means 1 unit on your drawing equals{" "}
-            {scaleRatio} units in real life.
+            {t("ratioDescription", { scaleRatio })}
           </p>
         </div>
 
@@ -168,7 +167,9 @@ const ScaleConverter = () => {
           {/* Real world measurements */}
           <Card>
             <CardHeader className="py-3">
-              <CardTitle className="text-md">Real World Measurement</CardTitle>
+              <CardTitle className="text-md">
+                {t("realWorldMeasurement")}
+              </CardTitle>
             </CardHeader>
             <CardContent className="py-2">
               <div className="flex gap-2">
@@ -201,7 +202,7 @@ const ScaleConverter = () => {
           <Card>
             <CardHeader className="py-3">
               <CardTitle className="text-md">
-                Drawing/Model Measurement
+                {t("scaledMeasurement")}
               </CardTitle>
             </CardHeader>
             <CardContent className="py-2">
@@ -237,42 +238,35 @@ const ScaleConverter = () => {
 
         {/* Result explanation */}
         <Card className="bg-muted">
-          <CardHeader className="py-3">
-            <CardTitle className="text-md">Understanding the Result</CardTitle>
+          <CardHeader className="py-2">
+            <CardTitle className="text-md">
+              {t("understandingResult")}
+            </CardTitle>
           </CardHeader>
           <CardContent className="py-2">
             {convertDirection === "realToScale" ? (
               <p>
-                {realValue} {realUnit} in real life equals{" "}
-                {scaledValue !== null ? scaledValue.toFixed(4) : "..."}{" "}
-                {scaledUnit} on your 1:{scaleRatio} model or drawing.
+                {t("understandingResultRealToScale", {
+                  scaledValue:
+                    scaledValue !== null ? scaledValue.toFixed(2) : "...",
+                  scaledUnit,
+                  scaleRatio,
+                  realValue,
+                  realUnit,
+                })}
               </p>
             ) : (
               <p>
-                {scaledValue !== null ? scaledValue : "..."} {scaledUnit} on
-                your 1:{scaleRatio} model or drawing equals{" "}
-                {realValue.toFixed(4)} {realUnit} in real life.
+                {t("understandingResultScaleToReal", {
+                  scaledValue:
+                    scaledValue !== null ? scaledValue.toFixed(2) : "...",
+                  scaledUnit,
+                  realValue: realValue.toFixed(2),
+                  realUnit,
+                  scaleRatio,
+                })}
               </p>
             )}
-          </CardContent>
-        </Card>
-
-        {/* Scale guide */}
-        <Card className="bg-muted/50">
-          <CardHeader className="py-3">
-            <CardTitle className="text-md">Recommended Scales</CardTitle>
-          </CardHeader>
-          <CardContent className="py-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
-              <div>• 1:1 → Full-size details</div>
-              <div>• 1:5 → Furniture, detailed components</div>
-              <div>• 1:20 → Interior details, furniture layouts</div>
-              <div>• 1:50 → Room layouts, small building plans</div>
-              <div>• 1:100 → Building plans, sections</div>
-              <div>• 1:200 → Site plans for smaller projects</div>
-              <div>• 1:500 → Urban context, larger sites</div>
-              <div>• 1:1000, 1:1250 → Urban planning, master plans</div>
-            </div>
           </CardContent>
         </Card>
       </CardContent>
