@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardFooter,
 } from "@/components/ui/card";
 import {
   Select,
@@ -19,10 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-type UnitSystem = "metric" | "imperial";
 type MetricUnit = "mm" | "cm" | "m" | "km";
 type ImperialUnit = "in" | "ft" | "yd" | "mi";
 type AreaUnit = "mm2" | "cm2" | "m2" | "km2" | "sqft" | "sqyd" | "acre" | "ha";

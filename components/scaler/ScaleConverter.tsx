@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardFooter,
 } from "@/components/ui/card";
 import {
   Select,
@@ -19,16 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 type Unit = "mm" | "cm" | "m" | "km";
-
-interface ConversionResult {
-  realValue: number;
-  scaledValue: number;
-  realUnit: Unit;
-  scaledUnit: Unit;
-}
 
 const ScaleConverter = () => {
   // State for inputs
@@ -65,15 +56,6 @@ const ScaleConverter = () => {
     km: 1000,
   };
 
-  // Calculate conversion whenever inputs change
-  useEffect(() => {
-    if (convertDirection === "realToScale") {
-      calculateScaledValue();
-    } else {
-      calculateRealValue();
-    }
-  }, [realValue, scaleRatio, realUnit, scaledUnit, convertDirection]);
-
   // Convert from real world to scale
   const calculateScaledValue = () => {
     if (realValue === null || scaleRatio === null) return;
@@ -105,6 +87,15 @@ const ScaleConverter = () => {
 
     setRealValue(result);
   };
+
+  // Calculate conversion whenever inputs change
+  useEffect(() => {
+    if (convertDirection === "realToScale") {
+      calculateScaledValue();
+    } else {
+      calculateRealValue();
+    }
+  }, [realValue, scaleRatio, realUnit, scaledUnit, convertDirection]);
 
   // Handle real world value change
   const handleRealValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
