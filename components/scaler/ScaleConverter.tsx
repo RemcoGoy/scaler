@@ -19,12 +19,6 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
-import {
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-  InputOTP,
-} from "@/components/ui/input-otp";
 
 type Unit = "mm" | "cm" | "m" | "km";
 
@@ -41,7 +35,8 @@ const ScaleConverter = () => {
     "realToScale" | "scaleToReal"
   >("realToScale");
 
-  const [customRatio, setCustomRatio] = useState<string>("");
+  const [customRatioFactor1, setCustomRatioFactor1] = useState<number>(1);
+  const [customRatioFactor2, setCustomRatioFactor2] = useState<number>(5);
 
   // Common scales in architecture
   const commonScales = [
@@ -185,19 +180,23 @@ const ScaleConverter = () => {
         {scaleRatio === 0 && (
           <div className="space-y-2">
             <label className="text-sm font-medium">{t("customRatio")}</label>
-            <InputOTP
-              maxLength={2}
-              value={customRatio}
-              onChange={(v) => setCustomRatio(v)}
-            >
-              <InputOTPGroup>
-                <InputOTPSlot index={0} />
-              </InputOTPGroup>
+            <div className="flex items-center gap-2">
+              <Input
+                type="number"
+                value={customRatioFactor1}
+                onChange={(e) =>
+                  setCustomRatioFactor1(parseInt(e.target.value))
+                }
+              />
               <span className="text-xl font-bold">:</span>
-              <InputOTPGroup>
-                <InputOTPSlot index={1} />
-              </InputOTPGroup>
-            </InputOTP>
+              <Input
+                type="number"
+                value={customRatioFactor2}
+                onChange={(e) =>
+                  setCustomRatioFactor2(parseInt(e.target.value))
+                }
+              />
+            </div>
           </div>
         )}
 
@@ -247,10 +246,10 @@ const ScaleConverter = () => {
               <div className="flex gap-2">
                 <div className="flex-grow">
                   <Input
-                    type="text"
+                    type="number"
                     value={scaledValue !== null ? scaledValue : ""}
                     onChange={handleScaledValueChange}
-                    step={0.01}
+                    step={1}
                   />
                 </div>
                 <div className="w-24">

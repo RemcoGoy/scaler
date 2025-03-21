@@ -1,6 +1,9 @@
-import { Suspense } from "react";
+"use client";
+
+import { useState } from "react";
 import ScaleConverter from "@/components/scaler/ScaleConverter";
 import UnitConverter from "@/components/scaler/UnitConverter";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
   CardContent,
@@ -8,12 +11,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { Navbar } from "@/components/ui/navbar";
-import TabsContainer from "@/components/ui/tabs-container";
 
-export default async function Home() {
-  const t = await getTranslations();
+export default function Home() {
+  const [activeTab, setActiveTab] = useState<"scale" | "units">("scale");
+  const t = useTranslations();
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value as "scale" | "units");
+  };
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -22,10 +29,24 @@ export default async function Home() {
       <main className="container mx-auto py-8 px-4">
         {/* Tab Selector */}
         <div className="max-w-4xl mx-auto">
-          <TabsContainer 
-            scaleTabLabel={t("tabs.scale")} 
-            unitsTabLabel={t("tabs.units")}
-          />
+          <Tabs
+            value={activeTab}
+            onValueChange={handleTabChange}
+            className="w-full mb-8"
+          >
+            <TabsList className="grid w-full grid-cols-2 mb-8">
+              <TabsTrigger value="scale">{t("tabs.scale")}</TabsTrigger>
+              <TabsTrigger value="units">{t("tabs.units")}</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="scale">
+              <ScaleConverter />
+            </TabsContent>
+
+            <TabsContent value="units">
+              <UnitConverter />
+            </TabsContent>
+          </Tabs>
         </div>
 
         {/* Information Section */}
