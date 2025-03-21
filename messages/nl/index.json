@@ -1,0 +1,20 @@
+{
+    "app": {
+        "title": "Scaler",
+        "languageSelector": "Taal",
+        "subtitle": "Een hulpmiddel voor architectuurstudenten om te werken met schalen en eenhedenconversies",
+        "footerText": "Gemaakt voor architectuurstudenten om schaal- en eenhedenconversies te vereenvoudigen"
+    },
+    "tabs": {
+        "scale": "Schaal",
+        "units": "Eenheden"
+    },
+    "common": {
+        "english": "Engels",
+        "dutch": "Nederlands"
+    },
+    "info": {
+        "title": "Schaal begrijpen in Architectuur",
+        "subtitle": "Het essentiële concept dat echte structuren verbindt met hun representaties"
+    }
+}

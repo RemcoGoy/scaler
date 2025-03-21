@@ -1,0 +1,20 @@
+{
+    "app": {
+        "title": "Scaler",
+        "languageSelector": "Language",
+        "subtitle": "A tool for architecture students to work with scales and unit conversions",
+        "footerText": "Created for architecture students to simplify scale and unit conversions"
+    },
+    "tabs": {
+        "scale": "Scale",
+        "units": "Units"
+    },
+    "common": {
+        "english": "English",
+        "dutch": "Dutch"
+    },
+    "info": {
+        "title": "Understanding Scale in Architecture",
+        "subtitle": "The essential concept that connects real-world structures to their representations"
+    }
+}
