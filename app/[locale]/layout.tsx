@@ -22,8 +22,9 @@ export default async function LocaleLayout({
   // Load the translation messages
   let messages;
   try {
-    messages = (await import(`../../messages/${locale}/index.json`)).default;
+    messages = (await import(`@/messages/${locale}/index.json`)).default;
   } catch (error) {
+    console.error(error);
     notFound();
   }
 

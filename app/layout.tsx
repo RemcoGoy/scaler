@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 const geistSans = Geist({
@@ -15,10 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "app" });
 
   return {
@@ -26,13 +25,15 @@ export async function generateMetadata({
   };
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { locale },
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-  params: { locale: string };
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <html lang={locale}>
       <body
