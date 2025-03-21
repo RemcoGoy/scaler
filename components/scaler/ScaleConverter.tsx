@@ -157,7 +157,7 @@ const ScaleConverter = () => {
   };
 
   return (
-    <Card className="shadow-lg border-t-4 border-t-blue-500">
+    <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
         <CardDescription className="text-center">
