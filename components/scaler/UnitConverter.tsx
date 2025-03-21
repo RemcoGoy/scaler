@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useTranslations } from "next-intl";
 
 type MetricUnit = "mm" | "cm" | "m" | "km";
 type ImperialUnit = "in" | "ft" | "yd" | "mi";
@@ -26,6 +27,8 @@ type AreaUnit = "mm2" | "cm2" | "m2" | "km2" | "sqft" | "sqyd" | "acre" | "ha";
 type ConversionType = "length" | "area";
 
 const UnitConverter = () => {
+  const t = useTranslations("unit");
+
   // Type of measurement to convert
   const [conversionType, setConversionType] =
     useState<ConversionType>("length");
@@ -120,12 +123,9 @@ const UnitConverter = () => {
   return (
     <Card className="shadow-lg border-t-4 border-t-blue-500">
       <CardHeader>
-        <CardTitle className="text-2xl text-center">
-          Architectural Unit Converter
-        </CardTitle>
+        <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
         <CardDescription className="text-center">
-          Convert between different metric and imperial units for architectural
-          design
+          {t("subtitle")}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -136,8 +136,8 @@ const UnitConverter = () => {
           className="w-full"
         >
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="length">Length</TabsTrigger>
-            <TabsTrigger value="area">Area</TabsTrigger>
+            <TabsTrigger value="length">{t("length")}</TabsTrigger>
+            <TabsTrigger value="area">{t("area")}</TabsTrigger>
           </TabsList>
 
           {/* Length Converter */}
@@ -146,7 +146,7 @@ const UnitConverter = () => {
               {/* From Length */}
               <Card>
                 <CardHeader className="py-3">
-                  <CardTitle className="text-md">From</CardTitle>
+                  <CardTitle className="text-md">{t("from")}</CardTitle>
                 </CardHeader>
                 <CardContent className="py-2">
                   <div className="flex gap-2">
@@ -193,7 +193,7 @@ const UnitConverter = () => {
               {/* To Length */}
               <Card>
                 <CardHeader className="py-3">
-                  <CardTitle className="text-md">To</CardTitle>
+                  <CardTitle className="text-md">{t("to")}</CardTitle>
                 </CardHeader>
                 <CardContent className="py-2">
                   <div className="flex gap-2">
@@ -246,7 +246,7 @@ const UnitConverter = () => {
               {/* From Area */}
               <Card>
                 <CardHeader className="py-3">
-                  <CardTitle className="text-md">From</CardTitle>
+                  <CardTitle className="text-md">{t("from")}</CardTitle>
                 </CardHeader>
                 <CardContent className="py-2">
                   <div className="flex gap-2">
@@ -293,7 +293,7 @@ const UnitConverter = () => {
               {/* To Area */}
               <Card>
                 <CardHeader className="py-3">
-                  <CardTitle className="text-md">To</CardTitle>
+                  <CardTitle className="text-md">{t("to")}</CardTitle>
                 </CardHeader>
                 <CardContent className="py-2">
                   <div className="flex gap-2">
@@ -344,7 +344,7 @@ const UnitConverter = () => {
         {/* Result explanation */}
         <Card className="bg-muted">
           <CardHeader className="py-3">
-            <CardTitle className="text-md">Conversion Result</CardTitle>
+            <CardTitle className="text-md">{t("conversionResult")}</CardTitle>
           </CardHeader>
           <CardContent className="py-2">
             {conversionType === "length" ? (
@@ -366,28 +366,26 @@ const UnitConverter = () => {
         {/* Common architectural conversions */}
         <Card className="bg-muted/50">
           <CardHeader className="py-3">
-            <CardTitle className="text-md">
-              Common Conversions for Architects
-            </CardTitle>
+            <CardTitle className="text-md">{t("commonConversions")}</CardTitle>
           </CardHeader>
           <CardContent className="py-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-muted-foreground">
               <div>
-                <strong>Length:</strong>
+                <strong>{t("length")}:</strong>
                 <ul className="pl-4 space-y-1 mt-1">
-                  <li>1 meter = 3.28084 feet</li>
-                  <li>1 foot = 0.3048 meters</li>
-                  <li>1 inch = 2.54 centimeters</li>
-                  <li>1 centimeter = 0.393701 inches</li>
+                  <li>1 m = 3.28084 ft</li>
+                  <li>1 ft = 0.3048 m</li>
+                  <li>1 in = 2.54 cm</li>
+                  <li>1 cm = 0.393701 in</li>
                 </ul>
               </div>
               <div>
-                <strong>Area:</strong>
+                <strong>{t("area")}:</strong>
                 <ul className="pl-4 space-y-1 mt-1">
-                  <li>1 square meter = 10.7639 square feet</li>
-                  <li>1 square foot = 0.092903 square meters</li>
-                  <li>1 acre = 4046.86 square meters</li>
-                  <li>1 hectare = 2.47105 acres</li>
+                  <li>1 m2 = 10.7639 ft2</li>
+                  <li>1 ft2 = 0.092903 m2</li>
+                  <li>1 a = 4046.86 m2</li>
+                  <li>1 ha = 2.47105 a</li>
                 </ul>
               </div>
             </div>

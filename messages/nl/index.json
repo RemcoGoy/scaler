@@ -21,6 +21,16 @@
         "understandingResultRealToScale": "{realValue} {realUnit} in de echte wereld is gelijk aan {scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening.",
         "understandingResultScaleToReal": "{scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening is gelijk aan {realValue} {realUnit} in de echte wereld."
     },
+    "unit": {
+        "title": "Eenheden Conversie",
+        "subtitle": "Converteer tussen verschillende eenheden van meting",
+        "length": "Lengte",
+        "area": "Oppervlakte",
+        "from": "Van",
+        "to": "Naar",
+        "conversionResult": "Conversie Resultaat",
+        "commonConversions": "Veelvoorkomende Architectuur Conversies"
+    },
     "common": {
         "english": "Engels",
         "dutch": "Nederlands"

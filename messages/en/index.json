@@ -22,6 +22,16 @@
         "understandingResultScaleToReal": "{scaledValue} {scaledUnit} on your 1:{scaleRatio} model or drawing equals {realValue} {realUnit} in real life.",
         "recommendedScales": "Recommended Scales"
     },
+    "unit": {
+        "title": "Unit Conversion",
+        "subtitle": "Convert between different units of measurement",
+        "length": "Length",
+        "area": "Area",
+        "from": "From",
+        "to": "To",
+        "conversionResult": "Conversion Result",
+        "commonConversions": "Common Architectural Conversions"
+    },
     "common": {
         "english": "English",
         "dutch": "Dutch"
