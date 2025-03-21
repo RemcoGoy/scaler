@@ -19,6 +19,12 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { useTranslations } from "next-intl";
+import {
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+  InputOTP,
+} from "@/components/ui/input-otp";
 
 type Unit = "mm" | "cm" | "m" | "km";
 
@@ -35,6 +41,8 @@ const ScaleConverter = () => {
     "realToScale" | "scaleToReal"
   >("realToScale");
 
+  const [customRatio, setCustomRatio] = useState<string>("");
+
   // Common scales in architecture
   const commonScales = [
     { label: "1:1", value: 1 },
@@ -49,6 +57,7 @@ const ScaleConverter = () => {
     { label: "1:1000", value: 1000 },
     { label: "1:1250", value: 1250 },
     { label: "1:2500", value: 2500 },
+    { label: t("custom"), value: 0 },
   ];
 
   // Conversion factors to meters
@@ -98,7 +107,14 @@ const ScaleConverter = () => {
     } else {
       calculateRealValue();
     }
-  }, [realValue, scaleRatio, realUnit, scaledUnit, convertDirection]);
+  }, [
+    realValue,
+    scaleRatio,
+    realUnit,
+    scaledUnit,
+    scaledValue,
+    convertDirection,
+  ]);
 
   // Handle real world value change
   const handleRealValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -116,7 +132,8 @@ const ScaleConverter = () => {
 
   // Handle scale ratio change
   const handleScaleRatioChange = (value: string) => {
-    setScaleRatio(parseInt(value, 10));
+    const parsedValue = parseFloat(value);
+    setScaleRatio(isNaN(parsedValue) ? 0 : parsedValue);
   };
 
   // Handle unit changes
@@ -159,9 +176,30 @@ const ScaleConverter = () => {
             </SelectContent>
           </Select>
           <p className="text-sm text-muted-foreground mt-1">
-            {t("ratioDescription", { scaleRatio })}
+            {t("ratioDescription", {
+              scaleRatio: scaleRatio === 0 ? "X" : scaleRatio,
+            })}
           </p>
         </div>
+
+        {scaleRatio === 0 && (
+          <div className="space-y-2">
+            <label className="text-sm font-medium">{t("customRatio")}</label>
+            <InputOTP
+              maxLength={2}
+              value={customRatio}
+              onChange={(v) => setCustomRatio(v)}
+            >
+              <InputOTPGroup>
+                <InputOTPSlot index={0} />
+              </InputOTPGroup>
+              <span className="text-xl font-bold">:</span>
+              <InputOTPGroup>
+                <InputOTPSlot index={1} />
+              </InputOTPGroup>
+            </InputOTP>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Real world measurements */}
@@ -209,10 +247,10 @@ const ScaleConverter = () => {
               <div className="flex gap-2">
                 <div className="flex-grow">
                   <Input
-                    type="number"
+                    type="text"
                     value={scaledValue !== null ? scaledValue : ""}
                     onChange={handleScaledValueChange}
-                    step="any"
+                    step={0.01}
                   />
                 </div>
                 <div className="w-24">

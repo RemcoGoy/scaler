@@ -19,7 +19,10 @@
         "scaledMeasurement": "Geschaalde meting",
         "understandingResult": "Begrijpen van het resultaat",
         "understandingResultRealToScale": "{realValue} {realUnit} in de echte wereld is gelijk aan {scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening.",
-        "understandingResultScaleToReal": "{scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening is gelijk aan {realValue} {realUnit} in de echte wereld."
+        "understandingResultScaleToReal": "{scaledValue} {scaledUnit} op je 1:{scaleRatio} model of tekening is gelijk aan {realValue} {realUnit} in de echte wereld.",
+        "recommendedScales": "Veelvoorkomende Schaalverhoudingen",
+        "custom": "Aangepast",
+        "customRatio": "Aangepaste Schaalverhouding"
     },
     "unit": {
         "title": "Eenheden Conversie",

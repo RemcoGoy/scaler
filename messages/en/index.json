@@ -20,7 +20,9 @@
         "understandingResult": "Understanding the Result",
         "understandingResultRealToScale": "{realValue} {realUnit} in real life equals {scaledValue} {scaledUnit} on your 1:{scaleRatio} model or drawing.",
         "understandingResultScaleToReal": "{scaledValue} {scaledUnit} on your 1:{scaleRatio} model or drawing equals {realValue} {realUnit} in real life.",
-        "recommendedScales": "Recommended Scales"
+        "recommendedScales": "Recommended Scales",
+        "custom": "Custom",
+        "customRatio": "Custom Ratio"
     },
     "unit": {
         "title": "Unit Conversion",
