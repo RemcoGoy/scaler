@@ -38,7 +38,14 @@
         "subtitle": "Converteer tussen verschillende oppervlakte eenheden",
         "from": "Van",
         "to": "Naar",
-        "conversionResult": "Conversie Resultaat"
+        "conversionResult": "Conversie Resultaat",
+        "calculator": {
+            "title": "Bereken oppervlakte",
+            "width": "Breedte",
+            "height": "Hoogte",
+            "unit": "Eenheid",
+            "area": "Oppervlakte"
+        }
     },
     "unit": {
         "title": "Eenheden Conversie",

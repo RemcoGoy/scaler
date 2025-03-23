@@ -18,6 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 import { AreaUnit } from "@/lib/types/area";
+import AreaCalculator from "@/components/AreaCalculator";
 
 const AreaConverter = () => {
   const t = useTranslations("area");
@@ -67,6 +68,7 @@ const AreaConverter = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
+        <AreaCalculator />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* From Area */}
           <Card>

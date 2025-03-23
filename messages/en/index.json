@@ -38,7 +38,14 @@
         "subtitle": "Convert between different units of area",
         "from": "From",
         "to": "To",
-        "conversionResult": "Conversion Result"
+        "conversionResult": "Conversion Result",
+        "calculator": {
+            "title": "Calculate Area",
+            "width": "Width",
+            "height": "Height",
+            "unit": "Unit",
+            "area": "Area"
+        }
     },
     "unit": {
         "title": "Unit Conversion",
