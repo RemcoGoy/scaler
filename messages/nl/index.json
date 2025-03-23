@@ -7,7 +7,9 @@
     },
     "tabs": {
         "scale": "Schaal",
-        "units": "Eenheden"
+        "units": "Eenheden",
+        "length": "Lengte",
+        "area": "Oppervlakte"
     },
     "scale": {
         "title": "Schaal Conversie",
@@ -23,6 +25,20 @@
         "recommendedScales": "Veelvoorkomende Schaalverhoudingen",
         "custom": "Aangepast",
         "customRatio": "Aangepaste Schaalverhouding"
+    },
+    "length": {
+        "title": "Lengte Conversie",
+        "subtitle": "Converteer tussen verschillende lengte eenheden",
+        "from": "Van",
+        "to": "Naar",
+        "conversionResult": "Conversie Resultaat"
+    },
+    "area": {
+        "title": "Oppervlakte Conversie",
+        "subtitle": "Converteer tussen verschillende oppervlakte eenheden",
+        "from": "Van",
+        "to": "Naar",
+        "conversionResult": "Conversie Resultaat"
     },
     "unit": {
         "title": "Eenheden Conversie",

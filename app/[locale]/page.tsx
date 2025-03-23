@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import ScaleConverter from "@/components/scaler/ScaleConverter";
-import UnitConverter from "@/components/scaler/UnitConverter";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -13,6 +12,8 @@ import {
 } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 import { Navbar } from "@/components/ui/navbar";
+import LengthConverter from "@/components/scaler/LengthConverter";
+import AreaConverter from "@/components/scaler/AreaConverter";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<"scale" | "units">("scale");
@@ -34,17 +35,22 @@ export default function Home() {
             onValueChange={handleTabChange}
             className="w-full mb-8"
           >
-            <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsList className="grid w-full grid-cols-3 mb-8">
               <TabsTrigger value="scale">{t("tabs.scale")}</TabsTrigger>
-              <TabsTrigger value="units">{t("tabs.units")}</TabsTrigger>
+              <TabsTrigger value="length">{t("tabs.length")}</TabsTrigger>
+              <TabsTrigger value="area">{t("tabs.area")}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="scale">
               <ScaleConverter />
             </TabsContent>
 
-            <TabsContent value="units">
-              <UnitConverter />
+            <TabsContent value="length">
+              <LengthConverter />
+            </TabsContent>
+
+            <TabsContent value="area">
+              <AreaConverter />
             </TabsContent>
           </Tabs>
         </div>

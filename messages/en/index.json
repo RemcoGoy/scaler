@@ -7,7 +7,9 @@
     },
     "tabs": {
         "scale": "Scale",
-        "units": "Units"
+        "units": "Units",
+        "length": "Length",
+        "area": "Area"
     },
     "scale": {
         "title": "Scale Conversion",
@@ -23,6 +25,20 @@
         "recommendedScales": "Recommended Scales",
         "custom": "Custom",
         "customRatio": "Custom Ratio"
+    },
+    "length": {
+        "title": "Length Conversion",
+        "subtitle": "Convert between different units of length",
+        "from": "From",
+        "to": "To",
+        "conversionResult": "Conversion Result"
+    },
+    "area": {
+        "title": "Area Conversion",
+        "subtitle": "Convert between different units of area",
+        "from": "From",
+        "to": "To",
+        "conversionResult": "Conversion Result"
     },
     "unit": {
         "title": "Unit Conversion",
